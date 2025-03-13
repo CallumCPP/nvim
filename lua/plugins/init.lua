@@ -5,6 +5,14 @@ return {
   "nvim-tree/nvim-web-devicons",
   {'akinsho/bufferline.nvim', version = "*", dependencies = 'nvim-tree/nvim-web-devicons'},
 
+  -- LSP
+  "williamboman/mason.nvim",
+  { "williamboman/mason-lspconfig.nvim", dependencies = { "williamboman/mason.nvim" }, },
+  { "neovim/nvim-lspconfig", dependencies = { "williamboman/mason-lspconfig.nvim" }, },
+
+  -- Linting
+  "mfussenegger/nvim-lint",
+
   -- Color Schemes
   "rebelot/kanagawa.nvim",
   {

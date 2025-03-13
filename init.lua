@@ -5,6 +5,8 @@ require("options")
 require("config.lazy")
 require("config.nvim-tree")
 require("config.bufferline")
+require("config.lspconfig")
+require("config.lint")
 
 -- Load keymap
 require("keymap")
