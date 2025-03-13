@@ -9,3 +9,11 @@ require("bufferline").setup({
         },
     },
 })
+
+local function close_buffer()
+    local current = vim.api.nvim_get_current_buf()
+    vim.cmd("bnext")
+    vim.cmd("bd " .. current)
+end
+
+vim.api.nvim_create_user_command("CloseBufferFocus", close_buffer, {})
