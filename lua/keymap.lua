@@ -1,5 +1,8 @@
 local opts = { noremap = true, silent = true }
 
+-- vim
+vim.keymap.set("n", "<ESC>", ":nohlsearch<CR>", opts)
+
 -- nvim-tree
 vim.keymap.set("n", "<C-n>", ":NvimTreeToggle<CR>", opts)
 vim.keymap.set("n", "<leader>e", ":NvimTreeOpen<CR>", opts)
