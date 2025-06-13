@@ -11,3 +11,5 @@ require("lint").linters_by_ft = {
     cpp = { "clangtidy" },
     rust = { "clippy" },
 }
+
+vim.diagnostic.config({ virtual_text = true })
