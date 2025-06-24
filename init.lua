@@ -9,6 +9,7 @@ require("config.lspconfig")
 require("config.lint")
 require("config.autopairs")
 require("config.telescope")
+require("config.conform")
 
 -- Load keymap
 require("keymap")
