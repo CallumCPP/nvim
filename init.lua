@@ -15,4 +15,5 @@ require("config.conform")
 require("keymap")
 
 -- Set theme
+require("config.theme")
 vim.cmd[[colorscheme tokyonight-night]]
