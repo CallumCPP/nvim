@@ -1,21 +1,13 @@
 return {
-	{ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" },
-	"neovim/nvim-lspconfig",
-	"nvim-tree/nvim-tree.lua",
+	-- Essentials
+	"nvim-treesitter/nvim-treesitter",
 	"nvim-tree/nvim-web-devicons",
-	{ "akinsho/bufferline.nvim", version = "*", dependencies = "nvim-tree/nvim-web-devicons" },
-	"windwp/nvim-autopairs",
+	{ "nvim-tree/nvim-tree.lua", opts = {} },
 
-	-- LSP
+	-- Mason and LSP
 	"williamboman/mason.nvim",
 	{ "williamboman/mason-lspconfig.nvim", dependencies = { "williamboman/mason.nvim" } },
-	{ "neovim/nvim-lspconfig", dependencies = { "williamboman/mason-lspconfig.nvim" } },
-
-	-- Formatting
-	{ "stevearc/conform.nvim", opts = {} },
-
-	-- Linting
-	"mfussenegger/nvim-lint",
+	"neovim/nvim-lspconfig",
 
 	-- Color Schemes
 	"rebelot/kanagawa.nvim",
