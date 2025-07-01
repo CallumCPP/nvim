@@ -11,9 +11,6 @@ return {
 			html = { "htmlhint" },
 			css = { "stylelint" },
 			lua = { "luacheck" },
-			c = { "clangtidy" },
-			cpp = { "clangtidy" },
-			rust = { "clippy" },
 		}
 
 		vim.api.nvim_create_autocmd({ "BufWritePost" }, {

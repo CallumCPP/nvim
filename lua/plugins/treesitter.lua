@@ -15,6 +15,7 @@ return {
 				"html",
 				"css",
 				"rust",
+				"jinja",
 			},
 			sync_install = false,
 			auto_install = true,

@@ -1,9 +1,8 @@
 -- Load options
 require("options")
 
--- Initialise plugins
+-- Initialise Lazy
 require("config.lazy")
-require("config.lspconfig")
 
 -- Load keymap
 require("keymap")
