@@ -4,7 +4,7 @@ return {
 		formatters_by_ft = {
 			lua = { "stylua" },
 			python = { "ruff_format" },
-			jinja = { "djlint" },
+			htmldjango = { "djlint" },
 		},
 		lsp_fallback = true,
 	},

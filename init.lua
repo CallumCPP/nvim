@@ -1,6 +1,16 @@
 -- Load options
 require("options")
 
+-- Set filetypes
+vim.filetype.add({
+  extension = {
+    jinja = "htmldjango",
+    j2 = "htmldjango",
+    jinja2 = "htmldjango",
+    html = "html",
+  },
+})
+
 -- Initialise Lazy
 require("config.lazy")
 
@@ -9,11 +19,3 @@ require("keymap")
 
 -- Set theme
 vim.cmd[[colorscheme tokyonight-night]]
-
--- Set filetypes
-vim.filetype.add({
-  extension = {
-    j2 = "jinja",
-    jinja2 = "jinja",
-  },
-})

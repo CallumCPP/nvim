@@ -15,7 +15,7 @@ return {
 				"html",
 				"css",
 				"rust",
-				"jinja",
+				"htmldjango",
 			},
 			sync_install = false,
 			auto_install = true,
