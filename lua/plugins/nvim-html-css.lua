@@ -31,10 +31,7 @@ return {
 			documentation = {
 				auto_show = true,
 			},
-			style_sheets = {
-				"./*.css",
-				"./**/*.css",
-			},
+			style_sheets = {},
 		})
 	end,
 }

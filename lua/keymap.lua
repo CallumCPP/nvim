@@ -27,6 +27,12 @@ vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+vim.keymap.set("n", "<leader>fa", function()
+	vim.lsp.buf.code_action({
+		apply = true,
+		context = { only = { "source.fixAll" } },
+	})
+end, { desc = "Apply safe fixes" })
 
 -- conform
 vim.keymap.set("n", "<leader>L", function()
