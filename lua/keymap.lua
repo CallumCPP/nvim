@@ -38,3 +38,15 @@ end, { desc = "Apply safe fixes" })
 vim.keymap.set("n", "<leader>L", function()
 	require("conform").format({ async = true, lsp_fallback = true })
 end, { desc = "Format file" })
+
+-- molten & quarto
+local runner = require("quarto.runner")
+vim.keymap.set("n", "<leader>rc", runner.run_cell, { desc = "Run Cell", silent = true })
+vim.keymap.set("n", "<leader>ra", runner.run_above, { desc = "Run Cell and Above", silent = true })
+vim.keymap.set("n", "<leader>rA", runner.run_all, { desc = "Run All Cells", silent = true })
+
+vim.keymap.set("n", "<leader>mi", ":MoltenInit<CR>", { desc = "Molten Init", silent = true })
+vim.keymap.set("n", "<leader>og", ":noautocmd MoltenEnterOutput<CR>", { desc = "Open Output Window", silent = true })
+vim.keymap.set("n", "<leader>oh", ":MoltenHideOutput<CR>", { desc = "Hide Output", silent = true })
+vim.keymap.set("n", "<leader>os", ":MoltenShowOutput<CR>", { desc = "Show Output", silent = true })
+vim.keymap.set("n", "<leader>od", ":MoltenDelete<CR>", { desc = "Delete Cell", silent = true })

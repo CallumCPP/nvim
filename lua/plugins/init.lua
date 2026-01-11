@@ -5,4 +5,6 @@ return {
 
 	-- Color Schemes
 	"rebelot/kanagawa.nvim",
+
+	"rcarriga/nvim-notify",
 }
