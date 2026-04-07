@@ -76,6 +76,14 @@ return {
 					})
 				end,
 			},
+			clangd = {
+				cmd = {
+					"clangd",
+					"--compile-commands-dir=build",
+					"--background-index",
+					"--clang-tidy",
+				},
+			},
 		}
 
 		for _, server in ipairs(lsp_servers) do
