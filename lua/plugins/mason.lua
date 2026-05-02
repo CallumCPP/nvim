@@ -83,6 +83,7 @@ return {
 					"--background-index",
 					"--clang-tidy",
 				},
+				filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto" },
 			},
 		}
 

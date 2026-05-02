@@ -9,6 +9,7 @@ vim.filetype.add({
 		jinja2 = "htmldjango",
 		html = "html",
         js = "javascript",
+		cl = "c",
 	},
 	filename = {
 		["cmakelists.txt"] = "cmake",

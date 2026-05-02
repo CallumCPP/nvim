@@ -21,9 +21,16 @@ vim.keymap.set("n", "<leader>fb", telescope_builtin.buffers, { desc = "Buffers" 
 vim.keymap.set("n", "<leader>fh", telescope_builtin.help_tags, { desc = "Help Tags" })
 vim.keymap.set("n", "<leader>fr", ":Telescope resume<CR>", opts)
 
+-- diagnostics
+vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Open diagnostic float" })
+vim.keymap.set("n", "<leader>D", function()
+	local _, winid = vim.diagnostic.open_float(nil, { focus = false })
+	if winid then vim.api.nvim_set_current_win(winid) end
+end, { desc = "Enter diagnostic float" })
+vim.keymap.set("n", "]d", function() vim.diagnostic.jump({ count = 1 }) end, { desc = "Next diagnostic" })
+vim.keymap.set("n", "[d", function() vim.diagnostic.jump({ count = -1 }) end, { desc = "Prev diagnostic" })
+
 -- lspconfig
-vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
@@ -36,7 +43,7 @@ end, { desc = "Apply safe fixes" })
 
 -- conform
 vim.keymap.set("n", "<leader>L", function()
-	require("conform").format({ async = true, lsp_fallback = true })
+	require("conform").format({ async = true, lsp_format = "fallback" })
 end, { desc = "Format file" })
 
 -- molten & quarto

@@ -1,9 +1,11 @@
 return {
 	"nvim-treesitter/nvim-treesitter",
-	run = ":TSUpdate",
+	branch = "main",
+	build = ":TSUpdate",
 	config = function()
-		require("nvim-treesitter.configs").setup({
-			ensure_installed = {
+		require("nvim-treesitter").setup()
+		vim.schedule(function()
+			require("nvim-treesitter.install").install({
 				"c",
 				"cpp",
 				"lua",
@@ -16,12 +18,12 @@ return {
 				"css",
 				"rust",
 				"htmldjango",
-			},
-			sync_install = false,
-			auto_install = true,
-			highlight = {
-				enable = true,
-			},
+			})
+		end)
+		vim.api.nvim_create_autocmd("FileType", {
+			callback = function()
+				pcall(vim.treesitter.start)
+			end,
 		})
 	end,
 }

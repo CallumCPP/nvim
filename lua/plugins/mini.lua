@@ -5,7 +5,6 @@ return {
 		require("mini.ai").setup({})
 		require("mini.pairs").setup({})
 		require("mini.comment").setup({})
-		require("mini.surround").setup({})
 		require("mini.operators").setup({})
 	end,
 }

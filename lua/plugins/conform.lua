@@ -11,8 +11,8 @@ return {
 			typescriptreact = { "biome" },
 			json = { "biome" },
 			jsonc = { "biome" },
-            cpp = { "clangd" },
+			cpp = { "clang_format" },
 		},
-		lsp_fallback = true,
+		default_format_opts = { lsp_format = "fallback" },
 	},
 }
