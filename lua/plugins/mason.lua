@@ -3,7 +3,7 @@ return {
 	dependencies = {
 		"mason-org/mason-lspconfig.nvim",
 		"neovim/nvim-lspconfig",
-		"hrsh7th/nvim-cmp",
+		"saghen/blink.cmp",
 	},
 	config = function()
 		local lsp_servers = {
@@ -26,7 +26,7 @@ return {
 			ensure_installed = lsp_servers,
 		})
 
-		local capabilities = require("cmp_nvim_lsp").default_capabilities()
+		local capabilities = require("blink.cmp").get_lsp_capabilities()
 
 		local custom_opts = {
 			html = {

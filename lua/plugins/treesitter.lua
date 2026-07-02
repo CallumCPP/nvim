@@ -20,5 +20,18 @@ return {
 				"htmldjango",
 			})
 		end)
+
+		-- Neovim's core ftplugins already call vim.treesitter.start() for
+		-- lua/help/query/markdown, so only the remaining installed parsers
+		-- need it here. Scoping to these filetypes (rather than every
+		-- FileType event) avoids firing on parser-less buffers like
+		-- lazy/mason/nvim-tree/telescope-prompt, which is what caused the
+		-- previous startup error.
+		vim.api.nvim_create_autocmd("FileType", {
+			pattern = { "c", "cpp", "vim", "javascript", "typescript", "html", "css", "rust", "htmldjango" },
+			callback = function(args)
+				pcall(vim.treesitter.start, args.buf)
+			end,
+		})
 	end,
 }
