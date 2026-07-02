@@ -15,7 +15,6 @@ return {
 			"lua_ls",
 			"dockerls",
 			"jinja_lsp",
-			"biome",
 			"ts_ls",
 			"cmake",
 			"tinymist",
@@ -94,5 +93,22 @@ return {
 
 			vim.lsp.config(server, opts)
 		end
+
+		-- oxlint LSP (npm-installed, not mason-managed). Lazily attaches on JS/TS
+		-- buffers in any project; root falls back to the file's own dir so no
+		-- marker file is needed.
+		vim.lsp.config("oxlint", {
+			capabilities = capabilities,
+			workspace_required = false,
+			root_dir = function(bufnr, on_dir)
+				local fname = vim.api.nvim_buf_get_name(bufnr)
+				local found = vim.fs.find(
+					{ ".oxlintrc.json", ".oxlintrc.jsonc", "oxlint.config.ts", "package.json", ".git" },
+					{ path = fname, upward = true }
+				)
+				on_dir(found[1] and vim.fs.dirname(found[1]) or vim.fs.dirname(fname))
+			end,
+		})
+		vim.lsp.enable("oxlint")
 	end,
 }
