@@ -8,11 +8,15 @@ vim.filetype.add({
 		j2 = "htmldjango",
 		jinja2 = "htmldjango",
 		html = "html",
-        js = "javascript",
+		js = "javascript",
 		cl = "c",
+		tscn = "godot_resource",
+		tres = "godot_resource",
+		gdshaderinc = "gdshader",
 	},
 	filename = {
 		["cmakelists.txt"] = "cmake",
+		["project.godot"] = "godot_resource",
 	},
 })
 

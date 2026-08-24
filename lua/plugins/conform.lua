@@ -15,6 +15,7 @@ return {
 			cpp = { "clang_format" },
 			css = { "stylelint" },
 			scss = { "stylelint" },
+			gdscript = { "gdformat" },
 		},
 		default_format_opts = { lsp_format = "fallback" },
 	},

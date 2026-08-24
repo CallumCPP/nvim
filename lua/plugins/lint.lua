@@ -8,6 +8,7 @@ return {
 			css = { "stylelint" },
 			lua = { "luacheck" },
 			htmldjango = { "djlint" },
+			gdscript = { "gdlint" },
 		}
 
 		vim.diagnostic.config({

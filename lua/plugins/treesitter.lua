@@ -18,6 +18,9 @@ return {
 				"css",
 				"rust",
 				"htmldjango",
+				"gdscript",
+				"gdshader",
+				"godot_resource",
 			})
 		end)
 
@@ -28,7 +31,20 @@ return {
 		-- lazy/mason/nvim-tree/telescope-prompt, which is what caused the
 		-- previous startup error.
 		vim.api.nvim_create_autocmd("FileType", {
-			pattern = { "c", "cpp", "vim", "javascript", "typescript", "html", "css", "rust", "htmldjango" },
+			pattern = {
+				"c",
+				"cpp",
+				"vim",
+				"javascript",
+				"typescript",
+				"html",
+				"css",
+				"rust",
+				"htmldjango",
+				"gdscript",
+				"gdshader",
+				"godot_resource",
+			},
 			callback = function(args)
 				pcall(vim.treesitter.start, args.buf)
 			end,

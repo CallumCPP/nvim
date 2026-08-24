@@ -94,6 +94,10 @@ return {
 			vim.lsp.config(server, opts)
 		end
 
+		-- Godot serves its own LSP from the running editor on :6005.
+		vim.lsp.config("gdscript", { capabilities = capabilities })
+		vim.lsp.enable("gdscript")
+
 		-- oxlint LSP (npm-installed, not mason-managed). Lazily attaches on JS/TS
 		-- buffers in any project; root falls back to the file's own dir so no
 		-- marker file is needed.
