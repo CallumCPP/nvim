@@ -50,7 +50,9 @@ return {
 			tinymist = {
 				settings = {
 					formatterMode = "typstyle",
-					exportPdf = "onSave",
+					formatterPrintWidth = 100,
+					formatterProseWrap = true,
+					exportPdf = "disable",
 					semanticTokens = "disable",
 					projectResolution = "lockDatabase",
 				},

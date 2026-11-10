@@ -16,6 +16,8 @@ return {
 			css = { "stylelint" },
 			scss = { "stylelint" },
 			gdscript = { "gdformat" },
+			sh = { "shfmt" },
+			bash = { "shfmt" },
 		},
 		default_format_opts = { lsp_format = "fallback" },
 	},
