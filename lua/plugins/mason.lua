@@ -52,7 +52,7 @@ return {
 					formatterMode = "typstyle",
 					formatterPrintWidth = 100,
 					formatterProseWrap = true,
-					exportPdf = "disable",
+					exportPdf = "onSave",
 					semanticTokens = "disable",
 					projectResolution = "lockDatabase",
 				},
